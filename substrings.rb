@@ -4,12 +4,12 @@
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
 def substrings(sentence, dictionary)
+  # Default value of word instances found should start at 0, so we can increment from there
   result = Hash.new(0)
   dictionary.each do |entry|
     # Downcase the sentence and find each word
     sentence.downcase.scan(/\w+/).each do |word|
       if word.include?(entry)
-        # If the word include an entry from the directory make a key-value pair or increment existing value
         result[entry] += 1
       end
     end
